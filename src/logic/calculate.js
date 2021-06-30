@@ -16,22 +16,6 @@ const calculate = (data, buttonName) => {
         total *= -1;
       }
       break;
-    case '%':
-      if (total && !next && !operation) {
-        total /= 100;
-      } else if (total && next && operation) {
-        if (operation === '+' || operation === '-') {
-          const tempNext = (total * next) / 100;
-          total = operate(Number(total), tempNext, operation).toString();
-          next = null;
-          operation = null;
-        } else {
-          total = (total * next) / 100;
-          next = null;
-          operation = null;
-        }
-      }
-      break;
 
     case '0':
     case '1':
@@ -53,6 +37,14 @@ const calculate = (data, buttonName) => {
         next += buttonName;
       }
 
+      break;
+
+    case '%':
+      if (!next) {
+        total /= 100;
+      } else {
+        next /= 100;
+      }
       break;
 
     case '.':
