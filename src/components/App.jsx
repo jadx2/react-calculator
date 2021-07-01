@@ -24,9 +24,7 @@ export default class App extends Component {
     const { total, next } = this.state;
     return (
       <>
-        <Display
-          result={(total && total.toString()) || (next && next.toString())}
-        />
+        <Display result={total || next} />
         <ButtonPanel onClick={this.handleClick} />
       </>
     );

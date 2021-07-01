@@ -2,6 +2,7 @@ import PropTypes from 'prop-types';
 import Button from './Button';
 
 const ButtonPanel = (props) => {
+  const { onClick } = props;
   const buttonsGroup = {
     group1: ['AC', '+/-', '%', '÷'],
     group2: ['7', '8', '9', 'x'],
@@ -10,17 +11,12 @@ const ButtonPanel = (props) => {
     group5: ['0', ',', '.', '='],
   };
 
-  const handleClick = (button) => {
-    const { handleClick } = props;
-    handleClick(button);
+  const handleClick = (buttonName) => {
+    onClick(buttonName);
   };
 
   const renderButtons = (buttons) => buttons.map((button) => (
-    <Button
-      key={button}
-      buttonName={button}
-      onClick={(item) => handleClick(item)}
-    />
+    <Button key={button} buttonName={button} onClick={handleClick} />
   ));
 
   const {
@@ -41,5 +37,5 @@ const ButtonPanel = (props) => {
 export default ButtonPanel;
 
 ButtonPanel.propTypes = {
-  handleClick: PropTypes.func.isRequired,
+  onClick: PropTypes.func.isRequired,
 };

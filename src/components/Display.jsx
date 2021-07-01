@@ -2,7 +2,7 @@ import PropTypes from 'prop-types';
 
 const Display = (props) => {
   const { result } = props;
-  return <h1>{result || '0'}</h1>;
+  return <div>{result || '0'}</div>;
 };
 
 export default Display;
