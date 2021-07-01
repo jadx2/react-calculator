@@ -13,8 +13,6 @@ const operate = (numberOne, numberTwo, operation) => {
       return num1.times(num2).toString();
     case '÷':
       return num2 === '0' ? 'Error' : num1.div(num2).toString();
-    case '%':
-      return ((num1 * num2) / 100).toString();
 
     default:
       return {};
