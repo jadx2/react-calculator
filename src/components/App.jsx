@@ -21,10 +21,11 @@ export default class App extends Component {
   };
 
   render() {
+    console.log(this.state);
     const { total, next } = this.state;
     return (
       <>
-        <Display result={total || next} />
+        <Display result={next || total} />
         <ButtonPanel onClick={this.handleClick} />
       </>
     );
