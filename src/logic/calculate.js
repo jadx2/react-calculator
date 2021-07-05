@@ -32,7 +32,10 @@ const calculate = (data, buttonName) => {
     case '8':
     case '9':
       if (!operation) {
-        if (!total) {
+        if (!total || total === '0') {
+          if (buttonName === '0') {
+            return {};
+          }
           total = buttonName;
         } else {
           total += buttonName;
@@ -51,7 +54,7 @@ const calculate = (data, buttonName) => {
       break;
 
     case '%':
-      if (total && !operation && !next) {
+      if (total && (!operation || operation === '=') && !next) {
         total = (total / 100).toString();
       }
       if (total && operation && next) {

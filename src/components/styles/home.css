@@ -1,0 +1,11 @@
+.home {
+  padding: 15rem 3rem;
+}
+
+.home__title {
+  margin-bottom: 10rem;
+}
+
+.home__description {
+  margin-bottom: 2rem;
+}
