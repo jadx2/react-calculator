@@ -1,8 +1,9 @@
 import PropTypes from 'prop-types';
+import '../styles/calculator/Display.css';
 
 const Display = (props) => {
   const { result } = props;
-  return <div>{result || '0'}</div>;
+  return <div className="display">{result || '0'}</div>;
 };
 
 export default Display;
