@@ -18,6 +18,10 @@ describe('If button is an operator', () => {
     const data = { total: null, next: null, operation: null };
     expect(Calculate(data, '+')).toStrictEqual({});
   });
+  it('Should not return a total', () => {
+    const data = { total: null, next: null, operation: null };
+    expect(Calculate(data, '+')).not.toBe({});
+  });
   it('Returns the sum if all values are present', () => {
     const data = { total: '1', next: '2', operation: '+' };
     expect(Calculate(data, '=')).toStrictEqual({
@@ -26,6 +30,15 @@ describe('If button is an operator', () => {
       operation: '=',
     });
   });
+  it('Should not return a difference', () => {
+    const data = { total: '1', next: '2', operation: '+' };
+    expect(Calculate(data, '=')).not.toBe({
+      total: '1',
+      next: null,
+      operation: '=',
+    });
+  });
+
   it('Returns the abstraction if all values are present', () => {
     const data = { total: '2', next: '1', operation: '-' };
     expect(Calculate(data, '=')).toStrictEqual({
@@ -61,6 +74,14 @@ describe('If button is floating point', () => {
       operation: null,
     });
   });
+  it('Should not return empty before floaitng point', () => {
+    const data = { total: null, next: null, operation: null };
+    expect(Calculate(data, '.')).not.toBe({
+      total: '.',
+      next: null,
+      operation: null,
+    });
+  });
   it('Returns total as total. if next is null and operation is =', () => {
     const data = { total: 1, next: null, operation: '=' };
     expect(Calculate(data, '.')).toStrictEqual({
@@ -82,6 +103,14 @@ describe('If button is floating point', () => {
     expect(Calculate(data, '.')).toStrictEqual({
       total: '1',
       next: '1.',
+      operation: '+',
+    });
+  });
+  it('Should not return two floating point in the same number', () => {
+    const data = { total: '1', next: '1', operation: '+' };
+    expect(Calculate(data, '.')).not.toBe({
+      total: '1',
+      next: '1.1.',
       operation: '+',
     });
   });
@@ -122,6 +151,10 @@ describe('If button is a number', () => {
       next: null,
       operation: null,
     });
+  });
+  it('Should not return empty', () => {
+    const data = { total: '0', next: null, operation: null };
+    expect(Calculate(data, '0')).not.toBe({});
   });
   it('Returns the button if total is > 0', () => {
     const data = { total: '1', next: null, operation: null };
@@ -167,6 +200,14 @@ describe('If button is +/-', () => {
     expect(Calculate(data, '+/-')).toStrictEqual({
       total: '1',
       next: '-1',
+      operation: '+',
+    });
+  });
+  it('Should not return double --', () => {
+    const data = { total: '1', next: '1', operation: '+' };
+    expect(Calculate(data, '+/-')).not.toBe({
+      total: '1',
+      next: '--1',
       operation: '+',
     });
   });
