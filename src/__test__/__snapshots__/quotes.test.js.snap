@@ -1,0 +1,19 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders Quotes 1`] = `
+<div
+  className="quotes"
+>
+  <h2
+    className="quotes__quote"
+  >
+    Mathematics is a game played according to certain rules with meaningless marks on paper.
+  </h2>
+  <p
+    className="quotes__author"
+  >
+    -
+    David Hilbert
+  </p>
+</div>
+`;

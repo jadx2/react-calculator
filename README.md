@@ -4,7 +4,7 @@
 
 ## Live Demo
 
-[Demo](https://jadx2-calculator.herokuapp.com/)
+[Math Magicians Demo](https://jadx2-calculator.herokuapp.com/)
 
 ### Built With
 
@@ -14,6 +14,8 @@ This project was built using these technologies.
 - HTML / CSS
 - Big.js
 - NodeJS
+- Jest
+- Testing Libraries
 
 ### Getting Started
 
@@ -57,6 +59,14 @@ To get a local copy up and running follow these simple example steps.
 
 ```
   http://localhost:3000/
+```
+
+### Testing
+
+- Run the test command in the root folder of the project:
+
+```
+  yarn run test
 ```
 
 ## Contributors
