@@ -34,7 +34,7 @@ const calculate = (data, buttonName) => {
       if (!operation) {
         if (!total || total === '0') {
           if (buttonName === '0') {
-            return {};
+            total = '0';
           }
           total = buttonName;
         } else {

@@ -115,9 +115,13 @@ describe('If button is %', () => {
 });
 
 describe('If button is a number', () => {
-  it('Returns null if total is 0 and button is 0', () => {
+  it('Returns 0 if total is 0 and button is 0', () => {
     const data = { total: '0', next: null, operation: null };
-    expect(Calculate(data, '0')).toStrictEqual({});
+    expect(Calculate(data, '0')).toStrictEqual({
+      total: '0',
+      next: null,
+      operation: null,
+    });
   });
   it('Returns the button if total is > 0', () => {
     const data = { total: '1', next: null, operation: null };

@@ -1,4 +1,4 @@
-import quotes from './quotes';
+import quotes from '../../quotesData/quotes';
 import '../styles/quotes.css';
 
 const Quotes = () => {
