@@ -15,7 +15,7 @@ const operate = (numberOne, numberTwo, operation) => {
       return num2 === '0' ? 'Error' : num1.div(num2).toString();
 
     default:
-      return {};
+      return 'Error';
   }
 };
 

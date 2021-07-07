@@ -1,0 +1,20 @@
+.btn {
+  width: 25%;
+  height: 100%;
+  font-size: 50px;
+  border-radius: 0;
+  border: 1px solid #d1d1d1;
+  transition: all 0.3s ease-out;
+}
+
+.btn:hover {
+  background-color: #adadad;
+}
+
+.btn-orange {
+  background-color: #f5913e;
+}
+
+.bg-btn {
+  width: 50%;
+}

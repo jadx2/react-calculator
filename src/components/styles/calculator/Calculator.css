@@ -1,0 +1,5 @@
+.calculator {
+  display: flex;
+  justify-content: space-between;
+  padding: 15rem 3rem;
+}

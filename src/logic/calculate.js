@@ -14,7 +14,7 @@ const calculate = (data, buttonName) => {
       if (!total) {
         return {};
       }
-      if (total && !operation && !next) {
+      if (total && (!operation || operation === '=') && !next) {
         total = (total * -1).toString();
       } else if (next) {
         next = (next * -1).toString();
@@ -32,7 +32,10 @@ const calculate = (data, buttonName) => {
     case '8':
     case '9':
       if (!operation) {
-        if (!total) {
+        if (!total || total === '0') {
+          if (buttonName === '0') {
+            total = '0';
+          }
           total = buttonName;
         } else {
           total += buttonName;
@@ -51,7 +54,7 @@ const calculate = (data, buttonName) => {
       break;
 
     case '%':
-      if (total && !operation && !next) {
+      if (total && (!operation || operation === '=') && !next) {
         total = (total / 100).toString();
       }
       if (total && operation && next) {
@@ -72,7 +75,12 @@ const calculate = (data, buttonName) => {
       if (!total) {
         total = '0.';
       } else if (total && operation && !next) {
-        next = '0.';
+        if (operation === '=') {
+          total += '.';
+          operation = null;
+        } else {
+          next = '0.';
+        }
       } else if (!operation && !total.includes('.')) {
         total += '.';
       } else if (operation && !next.includes('.')) {
