@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import Display from './Display';
 import ButtonPanel from './ButtonPanel';
 import calculate from '../../logic/calculate';
@@ -14,10 +14,6 @@ const Calculator = () => {
   const handleClick = (buttonName) => {
     setData(calculate(data, buttonName));
   };
-
-  useEffect(() => {
-    console.log(data);
-  }, [data]);
 
   const { total, next } = data;
 
