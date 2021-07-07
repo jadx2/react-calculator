@@ -2,6 +2,8 @@
 
 > This calculator project was created to get a deeper understanding of React using stateful components.
 
+![screenshot](/screenshot.png)
+
 ## Live Demo
 
 [Math Magicians Demo](https://jadx2-calculator.herokuapp.com/)
