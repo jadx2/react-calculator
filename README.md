@@ -15,7 +15,6 @@ This project was built using these technologies.
 - ReactJS
 - HTML / CSS
 - Big.js
-- NodeJS
 - Jest
 - Testing Libraries
 
